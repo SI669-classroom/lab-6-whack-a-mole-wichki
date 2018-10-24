@@ -22,10 +22,10 @@ export class HomePage {
     /**
      * Create an observer to be passed to the new MoleHoles
      */
-     let scoreObserver = undefined;
-     
+     // let scoreObserverable = undefined;
+
      let theScore = Observable.create(observer => {
-       this.scoreObserver = observer;
+       this.scoreObservable = observer;
      });
 
     /**
@@ -37,7 +37,7 @@ export class HomePage {
      });
 
     for(let i = 0; i<9; i++) {
-      this.moleHoles.push(new MoleHole(i, this.scoreObserver))
+      this.moleHoles.push(new MoleHole(i, this.scoreObservable))
     }
 
     let timerUpdate = Observable.create(observer => {
